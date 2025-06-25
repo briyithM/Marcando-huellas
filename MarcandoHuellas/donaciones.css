@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap');
+body{
+    background-color: rgb(245, 245, 245);
+    font-family: "Poppins" sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+:root {
+    --color-primary-red: #ca6410;        /* Rojo de la huella, botones principales, pins de mapa */
+    --color-secondary-teal: #004D4D;     /* Teal oscuro del footer y bordes de header */
+    --color-text-dark: #555555;          /* Texto principal oscuro, la mayoría de los títulos */
+    --color-text-light: #FFFFFF;         /* Texto blanco para fondos oscuros */
+    --color-bg-light-grey: #F8F8F8;     /* Fondo general de la página */
+    --color-bg-white: #FFFFFF;          /* Fondo de las secciones de contenido */
+    --color-border-light: #EEEEEE;       /* Bordes sutiles y líneas divisorias */
+    --color-overlay-dark: rgba(0, 0, 0, 0.5); /* Overlay semitransparente para fondos de imagen */
+}
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.primary-button {
+    text-decoration: none;
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.primary-button:hover {
+    background-color: #c53727; /* Un rojo un poco más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+.secondary-button { /* Para el botón "Más Información aquí" en ¿Quiénes Somos? */
+    background-color: var(--color-bg-white); /* Es un botón blanco con borde y texto oscuro */
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-primary-red); /* Borde rojo */
+    padding: 10px 20px; /* Un poco más pequeño que el principal */
+    font-size: 0.9em;
+}
+
+.secondary-button:hover {
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    transform: translateY(-2px);
+}
+
+.light-button { /* Botones para Donaciones (dentro de sección con fondo oscuro) */
+    background-color: var(--color-text-light); /* Fondo blanco */
+    color: var(--color-primary-red); /* Texto rojo */
+    border: 1px solid var(--color-primary-red); /* Borde rojo */
+    border-radius: 15px;
+}
+
+.light-button:hover {
+    background-color: var(--color-primary-red);
+    color: var(--color-text-light);
+    transform: translateY(-2px);
+}
+
+.small-button { /* Para los botones de "Nuestro Trabajo" */
+    padding: 8px 15px;
+    font-size: 0.85em;
+}
+
+
+header {
+    background-color: var(--color-bg-light-grey);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil para darle profundidad */
+}
+
+header nav {
+    font-weight: 200;
+    font-style: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo  {
+      
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.6em; /* Un poco más grande el texto del logo */
+    color: var(--color-text-dark);
+}
+
+.logo-img {
+    width: 49px; /* Tamaño más exacto al diseño */
+    height: auto;
+    margin-right: 12px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 35px; /* Espaciado entre elementos de navegación */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 0;
+    position: relative; /* Para la línea de hover */
+}
+
+.nav-links li a:hover {
+    color: var(--color-primary-red);
+    text-decoration: none;
+}
+nav a{
+    text-decoration: none;
+}
+.inicio-donaciones{
+    margin: 60px;
+    color: #555555;
+}
+.inicio-donaciones-text h1{
+    font-size: 90px;
+    font-weight: 200;
+    margin: 0;
+}
+.inicio-donaciones-text p{
+    font-size: 30px;
+    margin: 0;
+}
+.boton-inicio{
+    margin: 30px;
+    padding: 20px;
+    border-bottom: 3px solid var(--color-secondary-teal);
+}
+.boton-inicio a{
+    margin: 30px;
+    font-size: 20px;
+}
+.articulo{
+    display: flex;
+}
+.articulo p{
+    padding: 20px;
+}
+/*¨-----------------------------------------------------------*/
+.boton-donar {
+    color: var(--color-secondary-teal);
+    font-size: 2.1em;
+    border-bottom: 2px solid var(--color-secondary-teal);
+    cursor: pointer;
+    display: inline-flex; /* Para alinear el texto y la flecha */
+    align-items: center;
+    gap: 5px; /* Espacio entre texto y flecha */
+}
+
+.boton-donar:hover {
+    color: var(--color-primary-red);
+}
+
+/* Estilo para la flecha dentro del botón */
+.flecha-abajo::after {
+    content: '\2304'; /* Unicode para flecha hacia abajo */
+    font-size: 0.8em;
+    vertical-align: middle;
+} 
+.paypal{
+     font-family: "Poppins", sans-serif;
+    font-style:normal;
+    background-color: #d1d0d0;
+    display: flex;
+    justify-content: space-around;
+}
+.paypal h1{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    height: 100%;
+    font-size: 100px;
+    color: var(--color-secondary-teal);
+    margin: 130px;
+}
+.donar-paypal{
+    text-align: left;
+    margin: 100px;
+}
+.donar-paypal h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    font-size: 70px;
+    color: var(--color-primary-red);
+}
+.donar-paypal a{
+    margin: 0 0 50px 0;
+}
+.donar-paypal p{
+    font-family: "Poppins" sans-serif;
+    font-size: 30px;
+    margin: 0;
+    font-style: normal;
+    color: var(--color-secondary-teal);   
+}
+#cuenta-bancaria h1{
+    font-size: 80px;
+    margin: 80px;
+}
+.Pichincha{
+    width: 100px;
+}
+/* ------------------------------------- */
+/* ESTILOS DEL MODAL (LA VENTANA EMERGENTE) */
+/* ------------------------------------- */
+
+.modal-overlay {
+    /* Oculto por defecto */
+    display: none; 
+    
+    /* Posicionamiento y tamaño */
+    position: fixed; /* Fijo en la ventana del navegador */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente */
+    
+    /* Centrar el contenido del modal */
+    
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    /* Asegurarse de que esté encima de todo */
+    z-index: 1000; 
+}
+
+.modal-content {
+    background-color: #fcfcfcce; /* Fondo blanco de la "ventanita" */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para que destaque */
+    width: 90%; /* Ancho responsivo */
+    max-width: 500px; /* Ancho máximo para el modal */
+    position: relative; /* Para posicionar el botón de cerrar */
+    text-align: justify; /* Centrar contenido dentro del modal */
+}
+.modal-content h2{
+    font-family: "Poppins" sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 30px;
+}
+.modal-content p{
+    text-align: justify;
+    font-family: "Poppins" sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    font-style: normal;
+}
+.modal-content ul{
+    padding: 0;
+    font-size: 20px;
+}
+.modal-content ul li{
+    margin: 15px;
+    list-style: none;
+    text-align: left; 
+}
+.modal-content a{
+    text-decoration: none;
+    color: var(--color-secondary-teal);
+    margin: 5px;
+}
+.text-donaciones{
+    background-color: #ca6410;
+    padding: 10px;
+    border-radius: 15px;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    color: #333;
+}
+.content-lock{
+    display: flex;
+    background-color: rgba(0, 135, 168, 0.3);
+}
+.content-lock p{
+    text-align: center
+}
+.logolock{
+    left: 50%;
+    width: 40px;
+    margin: 10px;
+}
+
+/* Clase para mostrar el modal con JavaScript */
+.modal-overlay.show {
+    display: flex; 
+}
+.imgSobrepuesta{
+    width: 100%;
+   border-radius: 15px;
+}
+/*--------------------- Footer----------------------*/
+/* --- Footer (Pie de Página) --- */
+footer {
+    background-color: var(--color-secondary-teal); /* Teal oscuro del footer */
+    color: var(--color-text-light);
+    padding: 40px 20px 20px 20px; /* Ajuste de padding */
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 60px; /* Asegurar separación clara con la última sección */
+    position: relative; /* Para posibles elementos absolutos si se necesitara */
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1); /* Sombra hacia arriba */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-contact-info, .footer-map-column {
+    flex: 1;
+    min-width: 300px; /* Para que ocupen espacio adecuadamente */
+    max-width: 500px; /* Limitar el ancho */
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+footer h3 {
+    color: var(--color-text-light); /* Los títulos del footer son blancos */
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.footer-contact-info p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.social-icons {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 18px; /* Más espacio entre iconos */
+}
+
+.social-icons a img {
+    width: 60px; /* Iconos de redes sociales más grandes */
+    height: 60px;
+    transition: transform 0.2s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.15);
+}
+
+
+
+
+.copyright {
+    width: 100%;
+    margin-top: 40px; /* Más espacio entre el contenido del footer y el copyright */
+    font-size: 0.85em;
+    opacity: 0.7;
+    text-align: center;
+}
+#map{
+     width: 500px;
+    height: 400px;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
