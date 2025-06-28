@@ -1,4 +1,50 @@
+// --- Lógica para el Carrusel de Fondo ---
+const carruselSlides = document.querySelectorAll('.carrusel-slide');
+let currentSlideIndex = 0;
 
+function showNextSlide() {
+    // Quita la clase 'active' del slide actual
+    carruselSlides[currentSlideIndex].classList.remove('active');
+
+    // Avanza al siguiente slide, reiniciando si llega al final
+    currentSlideIndex = (currentSlideIndex + 1) % carruselSlides.length;
+
+    // Añade la clase 'active' al nuevo slide
+    carruselSlides[currentSlideIndex].classList.add('active');
+}
+
+// **¡Esta es la línea clave que faltaba!**
+// Asegura que el primer slide esté activo al cargar la página.
+// Incluso si ya lo tienes en HTML, esto garantiza el estado inicial desde JS.
+carruselSlides[currentSlideIndex].classList.add('active'); 
+
+// Inicia el cambio automático de slides cada 5 segundos (5000 ms)
+setInterval(showNextSlide, 5000); // Puedes ajustar el tiempo si lo deseas
+
+
+// --- Lógica existente para el Header (barra de navegación) ---
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    const scrollThreshold = 50; 
+
+    if (header) { // Nos aseguramos de que el elemento 'header' exista antes de manipularlo
+        if (window.scrollY > scrollThreshold) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+});
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    const scrollThreshold = 50; 
+
+    if (window.scrollY > scrollThreshold) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
 
 window.initMap = function() {
 let map;
