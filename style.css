@@ -1,4 +1,3 @@
-/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Hand:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&display=swap');
@@ -30,6 +29,7 @@ body {
     background-color: var(--color-bg-light-grey);
     line-height: 1.6;
     font-size: 16px; /* Base para unidades rem */
+    
 }
 
 a {
@@ -61,6 +61,7 @@ a:hover {
     color: var(--color-text-light);
     border-radius: 15px;
     padding: 10px;
+    font-weight: 300;
 }
 
 .primary-button:hover {
@@ -103,28 +104,34 @@ a:hover {
 
 /* --- Header (Cabecera y Navegación) --- */
 header {
-    
-    background-color: var(--color-bg-light-grey);
     padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil para darle profundidad */
+    z-index: 1000;
+    transition: background-color 0.4s ease-in-out;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 15px 0;
 }
 
 header nav {
-    font-style: normal;
-    display: flex;
-    justify-content: space-between;
-    align-items:center ;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 20px;
+}
+header.scrolled{
+     background-color: white; /* Fondo blanco al hacer scroll */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .logo {
     display: flex;
     align-items: center;
-    font-weight: bold;
     font-size: 1.6em; /* Un poco más grande el texto del logo */
-    color: var(--color-text-dark);
+    color: var(--color-bg-white);
 }
 
 .logo-img {
@@ -145,13 +152,17 @@ header nav {
 }
 
 .nav-links li a {
-    color: var(--color-text-dark);
-    font-weight: bold;
+    color: var(--color-bg-white);
     font-size: 1.1em;
     padding: 5px 0;
-    position: relative; /* Para la línea de hover */
+   
 }
-
+#header.scrolled .nav-links li a{
+    color: var(--color-secondary-teal);
+}
+#header.scrolled .logo{
+    color: var(--color-secondary-teal);
+}
 .nav-links li a:hover {
     color: var(--color-primary-red);
     text-decoration: none;
@@ -224,16 +235,47 @@ main section:last-of-type {
     overflow: hidden;
     margin-bottom: 0; /* Ajuste para mantener la consistencia */
     padding: 0;
-    box-shadow: 0 6px 15px rgba(0, 0,0, 0.1);
     width: 100%;
-    height: 605px;
-     
-    background-image: url(assets/img/image.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+.hero-section .hero-content {
+    max-width: 900px;
+    width: 100%; 
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box; 
+    margin-right: auto; 
+    margin-left: 8%; 
+}
+.carrusel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.carrusel-slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+.carrusel-slide.active{
+    opacity: 1;
+}
+.carrusel-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+}
 
 .hero-content {
     position: absolute;
@@ -246,8 +288,6 @@ main section:last-of-type {
     justify-content: center;
     align-items: flex-start;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.3); /* Overlay sutil para el texto */
-    border-radius: 10px;
     padding-left: 8%;
 }
 
@@ -259,6 +299,7 @@ main section:last-of-type {
     max-width: 900px;
     line-height: 1.1;
     text-align: left;
+    font-weight: 300;
 }
 .hero-content h1 .highlight-text {
     font-family: "Just Another Hand", cursive;
@@ -408,10 +449,12 @@ main section:last-of-type {
 #nuestro-trabajo h3{
     color: #000000;
      font-family: "Poppins", sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   font-style: normal;
 }
 #nuestro-trabajo p {
+    
+    font-weight:400;
     color: var(--color-text-dark); /* Asegurar que todo el texto sea blanco */
 }
 
@@ -425,6 +468,7 @@ main section:last-of-type {
     background-color: rgba(255, 255, 255, 0.747); /* Fondo semitransparente para los ítems dentro del teal */
     padding: 25px;
     margin: 50px;
+    
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.3); /* Borde blanco semitransparente */
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -454,12 +498,11 @@ main section:last-of-type {
 /* --- Adopciones Page Hero Section (página de Adopciones) --- */
 
 .adoptions-hero-content{
-     padding: 60px 20px;
-     background-color: rgb(235, 235, 235);
+    padding: 80px 20px;
+     background-color: var(--color-secondary-teal);
     text-align: center;
     justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.8);
     margin-bottom: 60px; /* Ajuste para mantener la consistencia */
 }
 
@@ -467,8 +510,7 @@ main section:last-of-type {
     font-size: 3em;
     color: var(--color-primary-red); /* El título principal de adopciones parece rojo */
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin: 0;
+    letter-spacing: 1.5px;   
 }
 
 /* --- Sección Mascotas Disponibles (Adopciones) --- */
@@ -631,161 +673,7 @@ footer h3 {
     }
 }
 
-@media (max-width: 768px) {
-    /* Header */
-    header nav {
-        flex-direction: column;
-        text-align: center;
-    }
-    .nav-links {
-        flex-direction: column;
-        margin-top: 20px;
-        align-items: center;
-    }
-    .nav-links li {
-        margin: 10px 0;
-    }
 
-    /* Main Content Sections */
-    main {
-        padding: 0 15px;
-    }
-    .content-section {
-        padding: 30px 20px;
-        margin-bottom: 40px; /* Reducir margen en pantallas más pequeñas */
-    }
-    main section:last-of-type {
-        margin-bottom: 40px; /* Consistencia para el último elemento */
-    }
-    .section-title {
-        font-size: 2em;
-    }
-    .subsection-title {
-        font-size: 1.4em;
-    }
-
-    /* Hero Section */
-    .hero-image {
-        height: 380px;
-    }
-    .hero-content h1 {
-        font-size: 2.5em;
-        position: static; /* Quitar la posición absoluta en móviles */
-        transform: none;
-        padding: 10px;
-        background-color: var(--color-overlay-dark); /* Fondo para mejorar legibilidad del texto */
-        border-radius: 10px;
-        margin-bottom: 25px;
-        
-    }
-    .hero-content .button {
-        position: static;
-        transform: none;
-    }
-
-    /* Donaciones Section */
-    .background-donaciones {
-        padding: 40px 20px;
-    }
-    .donation-card {
-        padding: 25px;
-    }
-    .donation-icon {
-        width: 60px;
-    }
-
-    /* Work Grid */
-    .work-item {
-        padding: 20px;
-    }
-    .work-icon {
-        width: 50px;
-    }
-
-    /* Footer */
-    footer {
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 15px;
-        margin-top: 40px; /* Reducir margen en móviles */
-    }
-    .footer-contact-info, .footer-map-column {
-        min-width: unset;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    .social-icons {
-        margin-bottom: 20px;
-    }
-    .copyright {
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* General */
-    body {
-        font-size: 14px;
-    }
-    .button {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    /* Header */
-    .logo-img {
-        width: 50px;
-    }
-    .logo span {
-        font-size: 1.4em;
-    }
-    .nav-links li {
-        margin: 8px 0;
-        font-size: 0.95em;
-    }
-
-    /* Hero */
-    .hero-image {
-        height: 280px;
-    }
-    .hero-content h1 {
-        font-size: 1.8em;
-        padding: 15px;
-        margin-bottom: 20px;
-    }
-
-    /* Sections */
-    .section-title {
-        font-size: 1.8em;
-    }
-    .subsection-title {
-        font-size: 1.2em;
-    }
-    .section-description {
-        font-size: 1em;
-    }
-    .content-section {
-        padding: 25px 15px;
-    }
-
-    /* Adopciones Grid */
-    .pet-image {
-        height: 200px;
-    }
-    .pet-card h3 {
-        font-size: 1.3em;
-    }
-    .pet-description {
-        height: auto; /* Dejar que la descripción crezca si es necesario */
-    }
-
-    /* Footer */
-    .social-icons a img {
-        width: 35px;
-        height: 35px;
-    }
-}
 .content-section1{
     display: flex;
     margin: 30px;
@@ -859,4 +747,479 @@ background-color: var(--color-secondary-teal);
     color: var(--color-bg-white);
     font-size: 1em;
     text-align: center;
+}
+/*-------------------------------------------------*/
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    /* Ajustar las tarjetas de donación para que se apilen en 2 columnas */
+    .donation-card {
+        flex-basis: calc(50% - 20px);
+    }
+
+    /* Ajustar el grid de mascotas para 2 columnas en tablets */
+    .pet-card {
+        flex-basis: calc(50% - 20px);
+    }
+
+    /* Permitir que los testimonios se ajusten y pasen a 2 columnas */
+    .testimonial-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .testimonial-card {
+        flex-basis: calc(50% - 40px);
+        margin: 10px;
+    }
+
+    /* Permitir que los elementos de "Nuestro Trabajo" se ajusten a 2 columnas */
+    .work-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .work-item {
+        margin: 15px; /* Adjust margin */
+        flex-basis: calc(50% - 30px); /* Two columns with margin */
+    }
+
+    /* Para la sección .content-section1 (con work-icon1) */
+    .content-section1 {
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 20px;
+        padding: 30px 20px;
+    }
+
+    .work-icon1 {
+        width: 80%;
+        max-width: 400px;
+        margin: 0 0 20px 0; /* Adjusted margin */
+    }
+
+    .section-description1 {
+        margin: 0 auto 30px auto;
+        text-align: justify;
+    }
+
+    .content-section1 h2,
+    .section-title1 {
+        text-align: center;
+    }
+}
+
+/* Para Teléfonos y Tablets Pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+    /* Header */
+    header nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    /* Contenido Principal de Secciones */
+    main {
+        padding: 0 15px;
+    }
+
+    .content-section {
+        padding: 30px 20px;
+        margin-bottom: 40px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    main section:last-of-type {
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .section-description {
+        font-size: 1em;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        height: 450px;
+        /* No change needed for background-position as cover handles it */
+    }
+
+    .hero-content {
+        padding: 20px; /* Reduced padding */
+        align-items: center; /* Center content horizontally */
+        text-align: center; /* Center text */
+        /* No need to reset position/transform here, as base is already flex */
+    }
+    .hero-content h1 {
+        font-size: 2.2em;
+        margin-bottom: 25px;
+        max-width: 90%;
+        text-align: center; /* Ensure title is centered in mobile */
+    }
+
+    .hero-content h1 .highlight-text {
+        font-size: 5rem;
+    }
+
+    /* Sección Donaciones */
+    .background-donaciones {
+        padding: 40px 20px;
+    }
+
+    .donation-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .donation-card {
+        width: 90%;
+        max-width: 350px;
+        padding: 25px;
+    }
+
+    .donation-icon {
+        width: 60px;
+    }
+
+    /* Grid de Trabajo */
+    .work-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .work-item {
+        width: 90%;
+        max-width: 380px;
+        margin: 15px auto;
+        padding: 20px;
+    }
+
+    .work-icon {
+        width: 80%;
+        height: auto;
+        max-height: 200px;
+    }
+
+    /* Grid de Adopciones */
+    .pet-grid {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20px;
+    }
+
+    .pet-card {
+        flex-basis: 95%;
+        max-width: 400px;
+        padding: 30px;
+    }
+
+    .pet-image {
+        height: 220px;
+    }
+
+    .pet-description {
+        height: auto;
+    }
+
+    /* Grid de Testimonios */
+    .testimonial-grid {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20px;
+    }
+
+    .testimonial-card {
+        width: 90%;
+        max-width: 450px;
+        margin: 10px auto;
+        padding: 20px;
+    }
+
+    /* Sección .content-section1 (con work-icon1) */
+    .content-section1 {
+        flex-direction: column; /* Ensure stacking on smaller screens */
+        margin: 20px auto;
+        padding: 20px 15px;
+    }
+
+    .content-section1 article {
+        margin: 0;
+    }
+
+    .work-icon1 {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+        margin-left: 0;
+        margin-right: 0; /* Remove horizontal margins */
+    }
+
+    .content-section1 h2,
+    .section-title1 {
+        font-size: 2em;
+        text-align: center; /* Center these titles too */
+    }
+
+    .section-description1 {
+        margin: 0 auto 20px auto;
+        text-align: justify;
+    }
+
+    /* Mapa */
+    #map {
+        width: 100%;
+        height: 280px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 15px;
+        margin-top: 40px;
+    }
+
+    .footer-contact-info,
+    .footer-map-column {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .social-icons {
+        margin-bottom: 20px;
+    }
+
+    .copyright {
+        margin-top: 20px;
+    }
+
+    /* Sección 2 (con fondo teal) */
+    .content-section-2 {
+        padding: 30px 20px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .content-section-2 h2 {
+        font-size: 1.8em;
+    }
+
+    .content-section-2 h3 {
+        font-size: 2em;
+    }
+
+    .imgpatita {
+        width: 40px;
+    }
+}
+
+/* Para Teléfonos Muy Pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    /* General */
+    body {
+        font-size: 13px;
+    }
+
+    .button {
+        padding: 8px 18px;
+        font-size: 0.85em;
+    }
+
+    /* Header */
+    .logo-img {
+        width: 45px;
+    }
+
+    .logo {
+        font-size: 1.2em;
+    }
+
+    .nav-links li {
+        margin: 6px 0;
+        font-size: 0.9em;
+    }
+
+    /* Hero */
+    .hero-section {
+        height: 350px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+
+    .hero-content h1 .highlight-text {
+        font-size: 4rem;
+    }
+
+    /* Secciones */
+    .section-title {
+        font-size: 1.6em;
+    }
+
+    .section-description {
+        font-size: 0.9em;
+    }
+
+    .content-section {
+        padding: 20px 10px;
+    }
+
+    /* Tarjetas de Donación */
+    .donation-card {
+        padding: 20px;
+    }
+
+    .donation-icon {
+        width: 50px;
+    }
+
+    .donation-card h3 {
+        font-size: 1.2em;
+    }
+
+    .donation-card p {
+        font-size: 0.85em;
+    }
+
+    .apadrina-text {
+        font-size: 1em;
+    }
+
+    /* Elementos de Trabajo */
+    .work-item {
+        padding: 15px;
+    }
+
+    .work-item h3 {
+        font-size: 1.2em;
+    }
+
+    .work-item p {
+        font-size: 0.85em;
+    }
+
+    /* Tarjetas de Mascotas */
+    .pet-card {
+        padding: 25px 15px;
+    }
+
+    .pet-image {
+        height: 180px;
+    }
+
+    .pet-card h3 {
+        font-size: 1.3em;
+    }
+
+    .pet-age {
+        font-size: 0.9em;
+    }
+
+    .pet-description {
+        height: auto;
+    }
+
+    /* Tarjetas de Testimonios */
+    .testimonial-card {
+        padding: 18px;
+        font-size: 0.9em;
+    }
+
+    /* Sección .content-section1 */
+    .content-section1 {
+        padding: 15px 10px;
+    }
+    .content-section1 h2,
+    .section-title1 {
+        font-size: 1.6em;
+    }
+
+    .section-description1 {
+        font-size: 0.9em;
+    }
+
+    /* Footer */
+    .social-icons a img {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+
+    footer h3 {
+        font-size: 1.1em;
+    }
+
+    .footer-contact-info p {
+        font-size: 0.85em;
+    }
+
+    .copyright {
+        font-size: 0.75em;
+    }
+
+    /* Sección 2 */
+    .content-section-2 h2 {
+        font-size: 1.5em;
+    }
+
+    .content-section-2 h3 {
+        font-size: 1.8em;
+    }
+
+    .content-section-2 p {
+        font-size: 0.9em;
+    }
+}
+
+/* Para Pantallas Extra Pequeñas (hasta 320px) */
+@media (max-width: 320px) {
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    .hero-content h1 {
+        font-size: 1.4em;
+    }
+
+    .hero-content h1 .highlight-text {
+        font-size: 3.5rem;
+    }
+
+    .section-title {
+        font-size: 1.4em;
+    }
+
+    .donation-card {
+        padding: 15px;
+    }
+
+    .work-item {
+        padding: 12px;
+    }
+
+    .pet-card {
+        padding: 20px 10px;
+    }
+
+    .testimonial-card {
+        padding: 15px;
+    }
 }
