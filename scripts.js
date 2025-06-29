@@ -1,3 +1,64 @@
+
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    const scrollThreshold = 50; 
+
+    if (header) { // Nos aseguramos de que el elemento 'header' exista antes de manipularlo
+        if (window.scrollY > scrollThreshold) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+});
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    const scrollThreshold = 50; 
+
+    if (window.scrollY > scrollThreshold) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const carouselTrackContainer = document.querySelector('.carousel-track-container');
+    const carouselTrack = document.querySelector('.carousel-track');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    const testimonialCards = document.querySelectorAll('.testimonial-card'); // <-- Usamos tu clase
+
+    // Solo ejecuta si encontramos los elementos del carrusel
+    if (!carouselTrackContainer || !prevButton || !nextButton || testimonialCards.length === 0) {
+        console.warn("Elementos del carrusel de testimonios no encontrados. El carrusel no se inicializará.");
+        return;
+    }
+
+    // Calcula el ancho de un solo recuadro más su gap
+    const cardWidth = testimonialCards[0].offsetWidth; // Ancho de la primera tarjeta
+    // Nota: Es importante que el gap se calcule en el elemento padre que lo define (carousel-track)
+    const gap = parseFloat(getComputedStyle(carouselTrack).gap); 
+    const scrollAmount = cardWidth + gap; // Cantidad a desplazar por cada clic
+
+    nextButton.addEventListener('click', () => {
+        carouselTrackContainer.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+
+    prevButton.addEventListener('click', () => {
+        carouselTrackContainer.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+
+    // Opcional: Podrías añadir lógica aquí para deshabilitar las flechas
+    // cuando se llega al principio o al final del carrusel si lo deseas.
+});
+
 // --- Lógica para el Carrusel de Fondo ---
 const carruselSlides = document.querySelectorAll('.carrusel-slide');
 let currentSlideIndex = 0;
@@ -22,29 +83,6 @@ carruselSlides[currentSlideIndex].classList.add('active');
 setInterval(showNextSlide, 5000); // Puedes ajustar el tiempo si lo deseas
 
 
-// --- Lógica existente para el Header (barra de navegación) ---
-window.addEventListener('scroll', function() {
-    const header = document.getElementById('header');
-    const scrollThreshold = 50; 
-
-    if (header) { // Nos aseguramos de que el elemento 'header' exista antes de manipularlo
-        if (window.scrollY > scrollThreshold) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    }
-});
-window.addEventListener('scroll', function() {
-    const header = document.getElementById('header');
-    const scrollThreshold = 50; 
-
-    if (window.scrollY > scrollThreshold) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
 
 window.initMap = function() {
 let map;
@@ -222,7 +260,7 @@ const infoWindow = new google.maps.InfoWindow({
         markerContent.style.alignItems = "center";
 
         const img = document.createElement("img");
-        img.src = "assets/icone/patits.png"; // **¡DOBLE CHECK a esta ruta!**
+        img.src = "/assets/icone/patits.png"; // **¡DOBLE CHECK a esta ruta!**
         img.width = 40;
         img.height = 40;
         img.alt = vetData.name; // Alt text para accesibilidad
