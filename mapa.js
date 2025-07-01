@@ -174,7 +174,7 @@ const infoWindow = new google.maps.InfoWindow({
         markerContent.style.alignItems = "center";
 
         const img = document.createElement("img");
-        img.src = "/assets/icone/patits.png"; // **¡DOBLE CHECK a esta ruta!**
+        img.src = "assets/icone/patits.png"; // **¡DOBLE CHECK a esta ruta!**
         img.width = 40;
         img.height = 40;
         img.alt = vetData.name; // Alt text para accesibilidad
