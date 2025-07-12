@@ -16,54 +16,104 @@
                 <span>Marcando Huellas</span>
             </div>
             </a>
+            <button class="menu-toggle" aria-label="Toggle navigation"> &#9776; </button>
             <ul class="nav-links">
                 <li><a href="donaciones.html">Donaciones</a></li>
                 <li><a href="sobre-nosotros.html">¿Quiénes Somos?</a></li>
-                <li><a href="#zonaContacto"  class="button primary-button">Contacto</a></li>
+                <li><a href="contacto.html"  class="button primary-button" id="botoncontact">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        
         <section class="adoptions-hero-section">
             <div class="adoptions-hero-content">
             <h1>Adopta uno sin hogar</h1>
             </div>
         </section>
 
+        <section class="filtros-adopcion">
+  <form id="form-filtros" class="filtro">
+    <div class="section">
+    <label for="tipo">Tipo:</label>
+    <select id="tipo" name="tipo">
+      <option value="">Todos</option>
+      <option value="perro">Perro</option>
+      <option value="gato">Gato</option>
+    </select>
+    </div>
+
+    <div class="section">
+    <label for="edad">Edad:</label>
+    <select id="edad" name="edad">
+      <option value="">Todas</option>
+      <option value="cachorro">Cachorro</option>
+      <option value="adulto">Adulto</option>
+    </select>
+    </div>
+
+    <div class="section">
+    <label for="tamano">Tamaño:</label>
+    <select id="tamano" name="tamano">
+      <option value="">Todos</option>
+      <option value="pequeño">Pequeño</option>
+      <option value="mediano">Mediano</option>
+      <option value="grande">Grande</option>
+    </select>
+    </div>
+    
+<button class="animated-button">
+  <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+    ></path>
+  </svg>
+  <span class="text">Filtrar</span>
+  <span class="circle"></span>
+  <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+    ></path>
+  </svg>
+</button>
+
+  </form>
+</section>
+
         <section class="available-pets-section">
             <div class="pet-grid">
-                <div class="pet-card">
+                <div class="pet-card" data-tipo="perro" data-edad="adulto" data-tamano="mediano">
                     <div class="pet-card-content">
                     <img src="assets/img/image (13).png" alt="Perro en adopción: Nombre" class="pet-image">
-                    <h3>Nombre</h3>
+                    <h3>Rigoberto</h3>
                     <p class="pet-age">Edad</p>
                     <p class="pet-description">Descripción: Lorem ipsum dolor sit amet consectetur adipiscing elit ultricies etiam volutpat diam, et sem laoreet libero ante ut magnis montes pellentesque</p>
                     <a href="#" class="button primary-button">Ver más</a>
                     </div>
                 </div>
-                <div class="pet-card">
+                <div class="pet-card" data-tipo="gato" data-edad="cachorro" data-tamano="pequeño">
                     <div class="pet-card-content">
                     <img src="assets/img/image (10).webp" alt="Gato en adopción: Nombre" class="pet-image">
-                    <h3>Nombre</h3>
+                    <h3>Luci</h3>
                     <p class="pet-age">Edad</p>
                     <p class="pet-description">Descripción: Lorem ipsum dolor sit amet consectetur adipiscing elit ultricies etiam volutpat diam, et sem laoreet libero ante ut magnis montes pellentesque</p>
                     <a href="#" class="button primary-button">Ver más</a>
                     </div>
                 </div>
-                <div class="pet-card">
+                <div class="pet-card" data-tipo="perro" data-edad="cachorro" data-tamano="grande">
                     <div class="pet-card-content">
                     <img src="assets/img/image (9).webp" alt="Perro en adopción: Nombre" class="pet-image">
-                    <h3>Nombre</h3>
+                    <h3>Carlos</h3>
                     <p class="pet-age">Edad</p>
                     <p class="pet-description">Descripción: Lorem ipsum dolor sit amet consectetur adipiscing elit ultricies etiam volutpat diam, et sem laoreet libero ante ut magnis montes pellentesque</p>
                     <a href="#" class="button primary-button">Ver más</a>
                     </div>
                 </div>
-                <div class="pet-card">
+                <div class="pet-card" data-tipo="gato" data-edad="adulto" data-tamano="grande">
                     <div class="pet-card-content">
                     <img src="assets/img/image (8).webp" alt="Gato en adopción: Nombre" class="pet-image">
-                    <h3>Nombre</h3>
+                    <h3>Mishu</h3>
                     <p class="pet-age">Edad</p>
                     <p class="pet-description">Descripción: Lorem ipsum dolor sit amet consectetur adipiscing elit ultricies etiam volutpat diam, et sem laoreet libero ante ut magnis montes pellentesque</p>
                     <a href="#" class="button primary-button">Ver más</a>
@@ -135,13 +185,14 @@
     </main>
 
     <footer>
-        <div class="footer-content">
+         <div class="footer-content" id="zonaContacto">
             <div class="footer-contact-info">
                 <h3 class="outline-text">Contáctanos</h3>
                 <div class="social-icons">
-                    <a href="#" target="_blank"><img src="assets/redes/Facebook_Logo.png" alt="Facebook"></a>
-                    <a href="#" target="_blank"><img src="assets/redes/whatsapp-logo-png.webp" alt="Whatsapp"></a>
-                    <a href="#" target="_blank"><img src="assets/redes/Gmailloog.png" alt="gmail"></a>
+                    <a href="https://www.facebook.com/marcandohuellasbhyo" target="_blank"><img src="assets/redes/Facebook.webp" alt="Facebook"></a>
+                    <a href="#" target="_blank"><img src="assets/redes/whatsapp.webp" alt="Whatsapp"></a>
+                    <a href="mailto:marcandohuellas_18@gmail.com" target="_blank"><img src="assets/redes/gmail.webp" alt="Gmail"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="assets/redes/Instagram.webp" alt="Instagram"></a>
                 </div>
                 <h3>¡Encuéntranos!</h3>
                 <p><strong>Dirección:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit ultricies etiam volutpat diam.</p>
@@ -157,7 +208,10 @@
         </div>
         <p class="copyright">&copy; 2025 Marcando Huellas. Todos los derechos reservados.</p>
     </footer>
-     <script src="header.js"></script>
+    <script src="nav.js"></script>
+    <script src="header.js"></script>
+    <script src="filtro.js"></script>
     <script src="carrusel.js"></script>
+   
 </body>
 </html>
