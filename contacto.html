@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
@@ -24,28 +25,28 @@
     </header>
       <div class="patron">
     <section class="hero-section-contacto">
-        <h1>Contactanos</h1>
+        <h1  class="animate__animated animate__backInLeft">Contactanos</h1>
     </section>
     <section class="textoarti">
-        <article class="caja">
+        <article class="caja animate__animated animate__backInLeft">
         <h2>Reporta una mascosta</h2>
-       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, error excepturi ipsa dolorem deleniti sunt doloribus id quam libero! Dolore quos dolores illo itaque magni, reprehenderit consequatur vitae perspiciatis ipsam.</p> 
+       <p>¿Has visto un perrito o gatito en peligro o perdido? No dudes en contarnos.Tu reporte puede salvar una vida. Juntos podemos actuar rápido para ayudarles. ¡Estamos aquí para escuchar y apoyar!.</p> 
         </article>
-        <div class="caja2">
+        <div class="caja2 animate__animated animate__backInRight">
         <article class="caja1">
        <h2>Tienes dudas sobre nosotros</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quae, obcaecati quisquam quia labore dolorem illo libero expedita, deleniti vel fugit dicta consectetur, ab fugiat excepturi voluptates! Obcaecati, explicabo et.</p>
+        <p>Queremos que te sientas parte de esta familia.Si tienes preguntas sobre nuestro trabajo, adopciones o cómo ayudar, escríbenos. ¡Con gusto te responderemos y te acompañaremos en este camino!</p>
         </article>
         </div>
         
-        <article class="caja">
+        <article class="caja animate__animated animate__backInLeft">
         <h2>Consulta eventos proximos</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, eligendi ut? Commodi voluptatem optio molestias magnam. Deleniti, tenetur architecto, consectetur accusamus voluptatibus nobis distinctio nisi quod harum quidem officia quis.</p>
+        <p>¿Quieres ser parte de nuestras campañas, jornadas o actividades?Aquí encontrarás toda la información actualizada para que no te pierdas ninguna oportunidad de colaborar o participar. ¡Te esperamos!</p>
         </article>
-        <div class="caja2">
+        <div class="caja2 animate__animated animate__backInRight">
         <article class="caja1">
         <h2>Se voluntario y ayuda a ayudar</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil et dicta iusto illum voluptate quae error enim, odio obcaecati id itaque unde ipsa magnam a sed. Est corrupti ab odit.</p>
+        <p>¿Quieres marcar la diferencia con tu tiempo y energía?Únete a nuestro equipo de voluntarios y vive la experiencia única de transformar vidas. No importa tu experiencia, solo tus ganas de ayudar.</p>
         </article>
         </div>
     </section>
@@ -63,7 +64,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBysSUIHzjU48ToPjft34WXNLFVMOsgFPg&callback=initMap&v=beta&libraries=marker" async defer></script>
     </div>
          <div class="form-container">
-        <h2>Servicio al Cliente</h2>
+        <h2>En que podemos ayudarte</h2>
         <form>
             <div class="name-fields">
                 <div class="form-group">
@@ -80,50 +81,28 @@
                 <label for="correo">CORREO ELECTRÓNICO*</label>
                 <input type="email" id="correo" name="correo" placeholder="Ejemplo: mario@gmail.com" required>
             </div>
-
             <div class="form-group">
-                <label for="numero">NUMERO*</label>
-                <input type="text" id="number" name="number" placeholder="Ejemplo: 0999999999" required>
-            </div>
-            <div class="form-group">
-                <label for="contacto">¿CÓMO DESEAS QUE TE CONTACTEMOS?*</label>
-                <select id="contacto" name="contacto" required>
-                    <option value="">Selecciona</option>
-                    <option value="email">Email</option>
-                    <option value="telefono">Teléfono</option>
-                </select>
-                <span class="error-message">RELLENA ESTE CAMPO OBLIGATORIO.</span>
+                        <label for="mensaje"> Deja tu duda</label>
+                        <textarea name="mensaje" id="mensaje"  rows="6" cols="50" placeholder="Escribe aquí tu duda..."></textarea>
             </div>
 
-            <div class="form-group">
-                <label for="proyecto">¿EN QUÉ ESTAS INTERESADO?*</label>
-                <select id="proyecto" name="proyecto" required>
-                    <option value="">Selecciona</option>
-                    <option value="adopciones">Adopciones</option>
-                    <option value="voluntariado">Voluntariados</option>
-                    <option value="campañas">Campañas</option>
-                    <option value="dudageneral">Información sobre la fundacion</option>
-
-                </select>
-                <span class="error-message">RELLENA ESTE CAMPO OBLIGATORIO.</span>
-            </div>
             <button type="submit" class="masInformacion">Quiero mas informacion</button>
             </form>
             </div>
     </section>
     </div>
-    <footer>
+    <footer class="footer-c">
         <div class="social-icons">
               <h3 class="outline-text">Redes Sociales</h3>
                     <a href="https://www.facebook.com/marcandohuellasbhyo" target="_blank"><img src="assets/redes/Facebook.webp" alt="Facebook"></a>
                     <a href="#" target="_blank"><img src="assets/redes/whatsapp.webp" alt="Whatsapp"></a>
                     <a href="mailto:marcandohuellas_18@gmail.com" target="_blank"><img src="assets/redes/gmail.webp" alt="Gmail"></a>
                     <a href="https://www.instagram.com/" target="_blank"><img src="assets/redes/Instagram.webp" alt="Instagram"></a>
-                </div>
+        </div>
         <p class="copyright">&copy; 2025 Marcando Huellas. Todos los derechos reservados.</p>
     </footer>
     <script src="nav.js"></script>
     <script src="header.js"></script>
-    <script src="mapa.js"></script>
+    <script src="mapafundacion.js"></script>
 </body>
 </html>
