@@ -6,6 +6,13 @@ let currentInfoWindow = null; // Para almacenar los marcadores de veterinarias
 // Datos de las veterinarias en Babahoyo
 var veterinarias = [
     {
+         name: "Punto de donacion",
+        lat: -1.7995502253234619, 
+        lng: -79.53780734995031,
+        address: "6F26+3VM, Babahoyo",
+        phone: ""
+    },
+    {
         name: "HospiVet Babahoyo Matriz Dr. Javier Schuldt (Av. 25 de Agosto)",
         lat: -1.7996905589217094,
         lng: -79.5211056850945,
@@ -167,22 +174,21 @@ const infoWindow = new google.maps.InfoWindow({
   // Función para crear contenido HTML del marcador
   function createCustomMarker(vetData) {
     const markerContent = document.createElement("div");
-     markerContent.style.width = "40px"; // Define el ancho del contenedor del icono
-        markerContent.style.height = "40px"; // Define el alto del contenedor del icono
-        markerContent.style.display = "flex"; // Para centrar la imagen si es necesario
+     markerContent.style.width = "40px"; 
+        markerContent.style.height = "40px"; 
+        markerContent.style.display = "flex"; 
         markerContent.style.justifyContent = "center";
         markerContent.style.alignItems = "center";
 
         const img = document.createElement("img");
-        img.src = "assets/icone/patits.webp"; // **¡DOBLE CHECK a esta ruta!**
+        img.src = "assets/icone/patits.png"; // 
         img.width = 40;
         img.height = 40;
-        img.alt = vetData.name; // Alt text para accesibilidad
-        img.style.objectFit = "contain"; // Asegura que la imagen se ajuste bien
-       // img.style.borderRadius = "50%";  Si quieres que la imagen sea redonda
+        img.alt = vetData.name; 
+        img.style.objectFit = "contain"; 
 
         markerContent.appendChild(img);
         return markerContent;
   }
 };
-// Asegúrate de que este código está en tu script.js
+
