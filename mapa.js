@@ -181,7 +181,7 @@ const infoWindow = new google.maps.InfoWindow({
         markerContent.style.alignItems = "center";
 
         const img = document.createElement("img");
-        img.src = "assets/icone/patits.png"; // 
+        img.src = "assets/icone/patits.webp"; // 
         img.width = 40;
         img.height = 40;
         img.alt = vetData.name; 
